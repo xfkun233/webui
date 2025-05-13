@@ -76,14 +76,14 @@ install_simple_firewall() {
     mount -o remount,rw /
     mkdir -p "$SIMPLE_FIREWALL_DIR"
     mkdir -p "$SIMPLE_FIREWALL_SYSTEMD_DIR"
-    wget --no-check-certificate -O "$SIMPLE_FIREWALL_DIR/simplefirewall.sh" https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simplefirewall/simplefirewall.sh
-    wget --no-check-certificate -O "$SIMPLE_FIREWALL_DIR/ttl-override" https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simplefirewall/ttl-override
-    wget --no-check-certificate -O "$SIMPLE_FIREWALL_DIR/ttlvalue" https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simplefirewall/ttlvalue
+    wget --no-check-certificate -O "$SIMPLE_FIREWALL_DIR/simplefirewall.sh" https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simplefirewall/simplefirewall.sh
+    wget --no-check-certificate -O "$SIMPLE_FIREWALL_DIR/ttl-override" https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simplefirewall/ttl-override
+    wget --no-check-certificate -O "$SIMPLE_FIREWALL_DIR/ttlvalue" https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simplefirewall/ttlvalue
 	chmod 666 $SIMPLE_FIREWALL_DIR/ttlvalue
     chmod +x "$SIMPLE_FIREWALL_DIR/simplefirewall.sh"
     chmod +x "$SIMPLE_FIREWALL_DIR/ttl-override"	
-    wget --no-check-certificate -O "$SIMPLE_FIREWALL_SYSTEMD_DIR/simplefirewall.service" https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simplefirewall/systemd/simplefirewall.service
-    wget --no-check-certificate -O "$SIMPLE_FIREWALL_SYSTEMD_DIR/ttl-override.service" https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simplefirewall/systemd/ttl-override.service
+    wget --no-check-certificate -O "$SIMPLE_FIREWALL_SYSTEMD_DIR/simplefirewall.service" https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simplefirewall/systemd/simplefirewall.service
+    wget --no-check-certificate -O "$SIMPLE_FIREWALL_SYSTEMD_DIR/ttl-override.service" https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simplefirewall/systemd/ttl-override.service
     cp -rf $SIMPLE_FIREWALL_SYSTEMD_DIR/* /lib/systemd/system
     ln -sf "/lib/systemd/system/simplefirewall.service" "/lib/systemd/system/multi-user.target.wants/"
     ln -sf "/lib/systemd/system/ttl-override.service" "/lib/systemd/system/multi-user.target.wants/"

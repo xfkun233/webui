@@ -110,8 +110,8 @@ install_lighttpd() {
     systemctl stop lighttpd
     echo -e "\033[0;32mInstalling/Updating Lighttpd...\033[0m"
     mkdir -p "$SIMPLE_ADMIN_DIR"
-    wget --no-check-certificate -O "$SIMPLE_ADMIN_DIR/lighttpd.conf" https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/lighttpd.conf
-    wget --no-check-certificate -O "/lib/systemd/system/lighttpd.service" https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/systemd/lighttpd.service
+    wget --no-check-certificate -O "$SIMPLE_ADMIN_DIR/lighttpd.conf" https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/lighttpd.conf
+    wget --no-check-certificate -O "/lib/systemd/system/lighttpd.service" https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/systemd/lighttpd.service
     ln -sf "/lib/systemd/system/lighttpd.service" "/lib/systemd/system/multi-user.target.wants/"
     echo "www-data ALL = (root) NOPASSWD: /usr/sbin/iptables, /usr/sbin/ip6tables, /usrdata/simplefirewall/ttl-override, /bin/echo, /bin/cat" > /opt/etc/sudoers.d/www-data
 
@@ -139,57 +139,57 @@ echo -e "\e[1;31m2) Installing simpleadmin from the $GITTREE branch\e[0m"
 			mkdir $SIMPLE_ADMIN_DIR/www/css
     		mkdir $SIMPLE_ADMIN_DIR/www/js
             cd $SIMPLE_ADMIN_DIR/systemd
-            wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/systemd/lighttpd.service
+            wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/systemd/lighttpd.service
 			sleep 1
 			cd $SIMPLE_ADMIN_DIR/script
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/script/ttl_script.sh
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/script/remove_watchcat.sh
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/script/create_watchcat.sh
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/script/ttl_script.sh
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/script/remove_watchcat.sh
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/script/create_watchcat.sh
 			sleep 1
 			cd $SIMPLE_ADMIN_DIR/console
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/console/.profile
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/console/.profile
 			sleep 1
 			cd $SIMPLE_ADMIN_DIR/console/menu
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/console/menu/start_menu.sh
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/console/menu/start_menu.sh
 			ln -f $SIMPLE_ADMIN_DIR/console/menu/start_menu.sh /usrdata/root/bin/menu
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/console/menu/sfirewall_settings.sh
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/console/menu/start_menu.sh
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/console/menu/LAN_settings.sh
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/console/menu/sfirewall_settings.sh
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/console/menu/start_menu.sh
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/console/menu/LAN_settings.sh
 			sleep 1
 			cd $SIMPLE_ADMIN_DIR/www
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/deviceinfo.html
-   			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/favicon.ico
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/index.html
-    		wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/network.html
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/settings.html
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/sms.html
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/scanner.html
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/watchcat.html
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/deviceinfo.html
+   			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/favicon.ico
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/index.html
+    		wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/network.html
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/settings.html
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/sms.html
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/scanner.html
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/watchcat.html
 			sleep 1
 			cd $SIMPLE_ADMIN_DIR/www/js
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/js/alpinejs.min.js
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/js/bootstrap.bundle.min.js
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/js/dark-mode.js
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/js/generate-freq-box.js
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/js/parse-settings.js
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/js/populate-checkbox.js
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/js/alpinejs.min.js
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/js/bootstrap.bundle.min.js
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/js/dark-mode.js
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/js/generate-freq-box.js
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/js/parse-settings.js
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/js/populate-checkbox.js
     		sleep 1
     		cd $SIMPLE_ADMIN_DIR/www/css
-    		wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/css/bootstrap.min.css
-      		wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/css/styles.css
+    		wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/css/bootstrap.min.css
+      		wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/css/styles.css
 			sleep 1
 			cd $SIMPLE_ADMIN_DIR/www/cgi-bin
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/cgi-bin/get_atcommand
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/cgi-bin/user_atcommand
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/cgi-bin/get_ping
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/cgi-bin/get_sms
-    		wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/cgi-bin/get_ttl_status
-      		wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/cgi-bin/set_ttl
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/cgi-bin/send_sms
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/cgi-bin/get_uptime
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/cgi-bin/get_watchcat_status
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/cgi-bin/set_watchcat
-			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/www/cgi-bin/watchcat_maker
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/cgi-bin/get_atcommand
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/cgi-bin/user_atcommand
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/cgi-bin/get_ping
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/cgi-bin/get_sms
+    		wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/cgi-bin/get_ttl_status
+      		wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/cgi-bin/set_ttl
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/cgi-bin/send_sms
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/cgi-bin/get_uptime
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/cgi-bin/get_watchcat_status
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/cgi-bin/set_watchcat
+			wget --no-check-certificate https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/www/cgi-bin/watchcat_maker
 			sleep 1
 			cd /
             chmod +x $SIMPLE_ADMIN_DIR/www/cgi-bin/*
@@ -206,10 +206,10 @@ echo -e "\e[1;31m2) Installing simpleadmin from the $GITTREE branch\e[0m"
 install_ttyd() {
     echo -e "\e[1;34mStarting ttyd installation process...\e[0m"
     cd $SIMPLE_ADMIN_DIR/console
-    curl -L -o ttyd https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/ttyd.armhf && chmod +x ttyd
-    wget --no-check-certificate "https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/console/ttyd.bash" && chmod +x ttyd.bash
+    curl -L -o ttyd https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/ttyd.armhf && chmod +x ttyd
+    wget --no-check-certificate "https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/console/ttyd.bash" && chmod +x ttyd.bash
     cd $SIMPLE_ADMIN_DIR/systemd/
-	wget --no-check-certificate "https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/systemd/ttyd.service"
+	wget --no-check-certificate "https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/main/development/simpleadmin/systemd/ttyd.service"
     cp -f $SIMPLE_ADMIN_DIR/systemd/ttyd.service /lib/systemd/system/
     ln -sf /usrdata/simpleadmin/ttyd /bin
     

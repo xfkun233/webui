@@ -104,7 +104,7 @@ ensure_entware_installed() {
 	remount_rw
     if [ ! -f "/opt/bin/opkg" ]; then
         echo -e "\e[1;32mInstalling Entware/OPKG\e[0m"
-        cd /tmp && wget --no-check-certificate -O installentware.sh "http://gitea.hapyle.work:33000/taotao/webui/raw/development/installentware.sh" && chmod +x installentware.sh && ./installentware.sh
+        cd /tmp && wget --no-check-certificate -O installentware.sh "https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/installentware.sh" && chmod +x installentware.sh && ./installentware.sh
         if [ "$?" -ne 0 ]; then
             echo -e "\e[1;31mEntware/OPKG installation failed. Please check your internet connection or the repository URL.\e[0m"
             exit 1
@@ -303,8 +303,8 @@ set_simpleadmin_passwd(){
 	ensure_entware_installed
  	opkg update
   	opkg install libaprutil
-	wget --no-check-certificate -O /usrdata/root/bin/htpasswd http://gitea.hapyle.work:33000/taotao/webui/raw/development/simpleadmin/htpasswd && chmod +x /usrdata/root/bin/htpasswd
-	wget --no-check-certificate -O /usrdata/root/bin/simplepasswd http://gitea.hapyle.work:33000/taotao/webui/raw/development/simpleadmin/simplepasswd && chmod +x /usrdata/root/bin/simplepasswd
+	wget --no-check-certificate -O /usrdata/root/bin/htpasswd https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/htpasswd && chmod +x /usrdata/root/bin/htpasswd
+	wget --no-check-certificate -O /usrdata/root/bin/simplepasswd https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleadmin/simplepasswd && chmod +x /usrdata/root/bin/simplepasswd
 	echo -e "\e[1;32mTo change your simpleadmin (admin) password in the future...\e[0m"
 	echo -e "\e[1;32mIn the console type simplepasswd and press enter\e[0m"
 	/usrdata/root/bin/simplepasswd
@@ -336,20 +336,20 @@ install_simple_admin() {
 			echo -e "\e[1;31m2) Installing simpleadmin from the development test branch\e[0m"
 			mkdir /usrdata/simpleupdates > /dev/null 2>&1
 		    mkdir /usrdata/simpleupdates/scripts > /dev/null 2>&1
-		    wget --no-check-certificate -O /usrdata/simpleupdates/scripts/update_socat-at-bridge.sh http://gitea.hapyle.work:33000/taotao/webui/raw/development/simpleupdates/scripts/update_socat-at-bridge.sh && chmod +x /usrdata/simpleupdates/scripts/update_socat-at-bridge.sh
+		    wget --no-check-certificate -O /usrdata/simpleupdates/scripts/update_socat-at-bridge.sh https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleupdates/scripts/update_socat-at-bridge.sh && chmod +x /usrdata/simpleupdates/scripts/update_socat-at-bridge.sh
 		    echo -e "\e[1;32mInstalling/updating dependency: socat-at-bridge\e[0m"
 			echo -e "\e[1;32mPlease Wait....\e[0m"
 			/usrdata/simpleupdates/scripts/update_socat-at-bridge.sh
 			echo -e "\e[1;32m Dependency: socat-at-bridge has been updated/installed.\e[0m"
 			sleep 1
-		    wget --no-check-certificate -O /usrdata/simpleupdates/scripts/update_simplefirewall.sh http://gitea.hapyle.work:33000/taotao/webui/raw/development/simpleupdates/scripts/update_simplefirewall.sh && chmod +x /usrdata/simpleupdates/scripts/update_simplefirewall.sh
+		    wget --no-check-certificate -O /usrdata/simpleupdates/scripts/update_simplefirewall.sh https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleupdates/scripts/update_simplefirewall.sh && chmod +x /usrdata/simpleupdates/scripts/update_simplefirewall.sh
 		    echo -e "\e[1;32mInstalling/updating dependency: simplefirewall\e[0m"
 			echo -e "\e[1;32mPlease Wait....\e[0m"
 			/usrdata/simpleupdates/scripts/update_simplefirewall.sh
 			echo -e "\e[1;32m Dependency: simplefirewall has been updated/installed.\e[0m"
 			sleep 1
 			set_simpleadmin_passwd
-		    wget --no-check-certificate -O /usrdata/simpleupdates/scripts/update_simpleadmin.sh http://gitea.hapyle.work:33000/taotao/webui/raw/development/simpleupdates/scripts/update_simpleadmin.sh && chmod +x /usrdata/simpleupdates/scripts/update_simpleadmin.sh
+		    wget --no-check-certificate -O /usrdata/simpleupdates/scripts/update_simpleadmin.sh https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleupdates/scripts/update_simpleadmin.sh && chmod +x /usrdata/simpleupdates/scripts/update_simpleadmin.sh
 			echo -e "\e[1;32mInstalling/updating: Simpleadmin content\e[0m"
 			echo -e "\e[1;32mPlease Wait....\e[0m"
 			/usrdata/simpleupdates/scripts/update_simpleadmin.sh
@@ -488,7 +488,7 @@ echo -e "\e[1;31m2) Installing tailscale from the $GITTREE branch\e[0m"
 			ensure_entware_installed
 			mkdir /usrdata/simpleupdates > /dev/null 2>&1
 		    mkdir /usrdata/simpleupdates/scripts > /dev/null 2>&1
-		    wget --no-check-certificate -O /usrdata/simpleupdates/scripts/update_tailscale.sh http://gitea.hapyle.work:33000/taotao/webui/raw/development/simpleupdates/scripts/update_tailscale.sh && chmod +x /usrdata/simpleupdates/scripts/update_tailscale.sh
+		    wget --no-check-certificate -O /usrdata/simpleupdates/scripts/update_tailscale.sh https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleupdates/scripts/update_tailscale.sh && chmod +x /usrdata/simpleupdates/scripts/update_tailscale.sh
 		    echo -e "\e[1;32mInstalling/updating: Tailscale\e[0m"
 			echo -e "\e[1;32mPlease Wait....\e[0m"
 			remount_rw
@@ -514,8 +514,8 @@ configure_tailscale() {
         1)
 	remount_rw
 	cd /lib/systemd/system/
-	wget --no-check-certificate -O tailscale-webui.service http://gitea.hapyle.work:33000/taotao/webui/raw/development/tailscale/systemd/tailscale-webui.service
-  	wget --no-check-certificate -O tailscale-webui-trigger.service http://gitea.hapyle.work:33000/taotao/webui/raw/development/tailscale/systemd/tailscale-webui-trigger.service
+	wget --no-check-certificate -O tailscale-webui.service https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/tailscale/systemd/tailscale-webui.service
+  	wget --no-check-certificate -O tailscale-webui-trigger.service https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/tailscale/systemd/tailscale-webui-trigger.service
      	ln -sf /lib/systemd/system/tailscale-webui-trigger.service /lib/systemd/system/multi-user.target.wants/
      	systemctl daemon-reload
        	echo "Tailscale Web UI Enabled"
@@ -756,7 +756,7 @@ install_sshd() {
 	ensure_entware_installed
     mkdir /usrdata/simpleupdates > /dev/null 2>&1
 	mkdir /usrdata/simpleupdates/scripts > /dev/null 2>&1
-	wget --no-check-certificate -O /usrdata/simpleupdates/scripts/update_sshd.sh http://gitea.hapyle.work:33000/taotao/webui/raw/development/simpleupdates/scripts/update_sshd.sh && chmod +x /usrdata/simpleupdates/scripts/update_sshd.sh
+	wget --no-check-certificate -O /usrdata/simpleupdates/scripts/update_sshd.sh https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/simpleupdates/scripts/update_sshd.sh && chmod +x /usrdata/simpleupdates/scripts/update_sshd.sh
 	echo -e "\e[1;32mInstalling/updating: SSHd\e[0m"
 	echo -e "\e[1;32mPlease Wait....\e[0m"
 	/usrdata/simpleupdates/scripts/update_sshd.sh
@@ -768,7 +768,7 @@ install_sshd() {
 
 ARCH=$(uname -a)
 if echo "$ARCH" | grep -q "aarch64"; then
-    cd /tmp && wget --no-check-certificate -O RM55x_rcPCIe_toolkit.sh http://gitea.hapyle.work:33000/taotao/webui/raw/development-SDXPINN/RM55x_rcPCIe_toolkit.sh && chmod +x RM55x_rcPCIe_toolkit.sh && ./RM55x_rcPCIe_toolkit.sh && cd /
+    cd /tmp && wget --no-check-certificate -O RM55x_rcPCIe_toolkit.sh https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development-SDXPINN/RM55x_rcPCIe_toolkit.sh && chmod +x RM55x_rcPCIe_toolkit.sh && ./RM55x_rcPCIe_toolkit.sh && cd /
     exit 0
 elif echo "$ARCH" | grep -q "armv7l"; then
     # Continue if architecture is armv7l
@@ -940,7 +940,7 @@ echo "                                           :+##+.            "
 			mkdir /usrdata/root
      	    mkdir /usrdata/root/bin
 			cd /usrdata/root/bin
-     	    wget --no-check-certificate -O fast http://gitea.hapyle.work:33000/taotao/webui/raw/development/fast_linux_arm && chmod +x fast
+     	    wget --no-check-certificate -O fast https://gh-proxy.com/raw.githubusercontent.com/xfkun233/webui/raw/development/fast_linux_arm && chmod +x fast
      	    cd /
 			ln -sf /usrdata/root/bin/fast /bin
      	    remount_ro
